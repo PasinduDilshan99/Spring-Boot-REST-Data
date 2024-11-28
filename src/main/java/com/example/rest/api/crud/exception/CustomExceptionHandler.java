@@ -10,15 +10,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class CustomExceptionHandler {
 
     @ExceptionHandler
-    public ResponseEntity<ExceptionResponse> studentNotFoundExceptionHandler(StudentNotFoundException e){
-        ExceptionResponse response = new ExceptionResponse();
-        response.setStatus(404);
-        response.setMessage(e.getMessage());
-        response.setTimeStamp(System.currentTimeMillis());
-        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler
     public ResponseEntity<ExceptionResponse> exceptionHandler(Exception e){
         ExceptionResponse response = new ExceptionResponse();
         response.setStatus(400);
